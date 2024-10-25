@@ -1,0 +1,15 @@
+# build
+/*/build/
+/*/.pytest_cache/
+**/dist/
+
+# Idea
+**/.idea/
+
+# Terraform
+/**/.terraform
+/**/providers.tf
+/**/db-workspace.tf
+
+# other
+/**/__pycache__/**
