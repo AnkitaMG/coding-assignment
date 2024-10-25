@@ -52,6 +52,7 @@ def initialize(spark: SparkSession, dbutils: Any) -> None:
 
     spark.conf.set("spark.databricks.io.cache.enabled", "true")
     spark.conf.set("spark.databricks.delta.optimizeWrites.enabled", "auto")
+    spark.conf.set("spark.sql.legacy.timeParserPolicy", "LEGACY")
 
 
 def start_processing(spark: SparkSession, dbutils: Any) -> float:

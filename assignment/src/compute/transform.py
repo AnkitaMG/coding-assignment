@@ -1,6 +1,6 @@
 import logging
 from pyspark.sql.dataframe import DataFrame
-from pyspark.sql import functions as F, Window
+from pyspark.sql import functions as F, Window as W
 
 logger = logging.getLogger(__name__)
 
@@ -55,7 +55,7 @@ def calculate_account_balance(
         )
 
         # Defining a window specification to partition by AccountNumber and order by TransactionDate
-        window_spec = Window.partitionBy("AccountNumber").orderBy("TransactionDate")
+        window_spec = W.partitionBy("AccountNumber").orderBy("TransactionDate")
 
         # Calculating cumulative balance
         balance_df = transactions_with_balance_df.withColumn(
